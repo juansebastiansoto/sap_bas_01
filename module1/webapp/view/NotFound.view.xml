@@ -1,0 +1,10 @@
+<mvc:View controllerName="module1.controller.NotFound"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+    displayBlock="true"
+    height="100%"
+    busyIndicatorDelay="0">
+
+    <IllustratedMessage title="Error 404" description="Ruta no encontrada" illustrationType="sapIllus-PageNotFound"/>
+    
+</mvc:View>
