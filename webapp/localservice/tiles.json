@@ -1,0 +1,16 @@
+{
+    "tileCollection": [
+        {
+            "title": "Lista",
+            "description": "Vista con una lista de productos",
+            "icon": "sap-icon://list",
+            "view": "ViewList"
+        },
+        {
+            "title": "Formulario",
+            "description": "Vista con una formulario para ingreso de datos",
+            "icon": "sap-icon://form",
+            "view": "FormList"
+        }
+    ]
+}
