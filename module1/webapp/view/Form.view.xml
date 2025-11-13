@@ -7,6 +7,9 @@
     xmlns:l="sap.ui.layout"
 >
     <Page id="pageForm" title="Form Page" showNavButton="true" navButtonPress="onNavBack">
+        <headerContent>
+            <core:Fragment fragmentName="module1.view.fragments.ButtonThemes" type="XML" />
+        </headerContent>    
         <content>
             <l:Grid defaultIndent="XL2 L3 M0 S0" defaultSpan="XL8 L6 M12 S12">
                 <VBox class="sapUiSmallMargin" alignContent="SpaceAround">
