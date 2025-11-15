@@ -1,0 +1,28 @@
+<mvc:View controllerName="module1.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m" xmlns:f="sap.f">
+    <Page id="page" title="{i18n>title}" showNavButton="true" navButtonPress="onNavBack">
+        <content>
+            <ScrollContainer width="100%" height="100%" vertical="true">
+                <Panel headerText="Tipos de vistas" class="sapUiMediumMargin" width="auto">
+                    <f:GridContainer class="sapuiSmallMargin" items="{mTiles>/tileCollection}">
+                        <f:layout>
+                            <f:GridContainerSettings rowSize="100px" columnSize="84px" gap="8px"/>
+                        </f:layout>
+                        <f:layoutS>
+                            <f:GridContainerSettings rowSize="70px" columnSize="70px" gap="5px"/>
+                        </f:layoutS>
+                        <GenericTile class="sapUiTinyMargin" header="{mTiles>title}" press="onPressTile" headerImage="{mTiles>icon}">
+                            <layoutData>
+                                <f:GridContainerItemLayoutData rows="2" columns="2" />
+                            </layoutData>
+                            <TileContent>
+                                <Label text="{mTiles>description}" wrapping="true"/>
+                            </TileContent>
+                        </GenericTile>
+                    </f:GridContainer>
+                </Panel>
+            </ScrollContainer>
+        </content>        
+    </Page>
+</mvc:View>

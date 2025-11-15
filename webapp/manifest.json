@@ -1,0 +1,159 @@
+{
+  "_version": "1.76.0",
+  "sap.app": {
+    "id": "module1",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.19.3",
+      "toolsId": "9c332c13-d76a-473d-8aa5-352044ba9ea3"
+    },
+    "dataSources": {
+      "product-srv": {
+        "uri": "localservice/products.json",
+        "type": "JSON"
+      },
+      "tile-srv": {
+        "uri": "localservice/tiles.json",
+        "type": "JSON"
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.141.3",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "module1.i18n.i18n"
+        }
+      },
+      "mProducts": {
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "product-srv"
+      },
+      "mTiles": {
+        "type": "sap.ui.model.json.JSONModel",
+        "dataSource": "tile-srv"
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "module1.view",
+        "async": true,
+        "bypassed": {
+          "target": "TargetNotFound"
+        }
+      },
+      "routes": [
+        {
+          "name": "RouteHome",
+          "pattern": ":?query:",
+          "target": [
+            "TargetHome"
+          ]
+        },
+        {
+          "name": "ViewList",
+          "pattern": "ViewList",
+          "target": [
+            "TargetList"
+          ]
+        },
+        {
+          "name": "FormList",
+          "pattern": "FormList",
+          "target": [
+            "TargetForm"
+          ]
+        },
+        {
+          "name": "ViewDetail",
+          "pattern": "detail/{productId}",
+          "target": [
+            "TargetDetail"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetHome": {
+          "id": "Home",
+          "name": "Home"
+        },
+        "TargetList": {
+          "id": "viewList",
+          "name": "List"
+        },
+        "TargetForm": {
+          "id": "formList",
+          "name": "Form"
+        },
+        "TargetNotFound": {
+          "id": "NotFound",
+          "name": "NotFound"
+        },
+        "TargetDetail": {
+          "id": "viewDetail",
+          "name": "Detail"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "module1.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  },
+  "sap.cloud": {
+    "public": true,
+    "service": "module1"
+  }
+}
